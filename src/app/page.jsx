@@ -1,4 +1,6 @@
 import DynamicImage from "@/app/myComponents/dynamicImage/DynamicImage";
+
+// sending data to OG image
 export async function generateMetadata({ searchParams }) {
   const params = await searchParams;
   const groupName = params.groupName || "Your Group";
@@ -16,10 +18,13 @@ export async function generateMetadata({ searchParams }) {
   };
 }
 
-export default function Home() {
+// sending data to component
+export default async function Home({ searchParams }) {
+  const params = await searchParams;
+  const groupName = params.groupName || "Your Group";
   return (
     <div className="">
-      <DynamicImage />
+      <DynamicImage groupName={groupName} />
     </div>
   );
 }
