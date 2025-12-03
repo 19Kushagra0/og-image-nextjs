@@ -1,6 +1,7 @@
 export default function JoinGroupOg({ groupName }) {
   return (
     <div
+      className="dynamic"
       style={{
         width: "1200px",
         height: "630px",
