@@ -8,6 +8,9 @@ export async function GET(req) {
 
   // Read groupName from URL
   const groupName = searchParams.get("groupName") || "Your Group";
+  // Convert the URL string into a URL object
+  // const url = new URL(req.url);
+  // const searchParams = url.searchParams;
 
   // Return OG Image
   return new ImageResponse(<DynamicImageOg groupName={groupName} />, {
